@@ -24,12 +24,10 @@ attribute 'byocm-chef/rs_sketchy',
           display_name: 'RightScale Sketchy Hostname',
           description: 'Should alwas be set to env:RS_SKETCHY',
           recipes: ['byocm-chef::serialize'],
-          required: 'required',
-          default: 'env:RS_SKETCHY'
+          required: 'required'
 
 attribute 'byocm-chef/rs_instance_uuid',
           display_name: 'RightScale Instance UUID',
           description: 'Should alwas be set to env:RS_INSTANCE_UUID',
           recipes: ['byocm-chef::serialize'],
-          required: 'required',
-          default: 'env:RS_INSTANCE_UUID'
+          required: 'required'
