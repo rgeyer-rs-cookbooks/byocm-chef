@@ -1,0 +1,12 @@
+{
+  "sources": {
+    "byocm-chef": {
+      "path": "."
+    },
+    "marker": {
+      "locked_version": "1.0.0",
+      "git": "git://github.com/rightscale-cookbooks/marker.git",
+      "ref": "893cb7e00691a5b6a6192b43b67d7a975b6c41c4"
+    }
+  }
+}
