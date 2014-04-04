@@ -4,6 +4,8 @@ byocm-chef Cookbook
 A cookbook for enabling better interoperability with RightScale when doing Chef
 BYOCM
 
+Travis-CI Build Status [![Build Status](https://travis-ci.org/rgeyer-rs-cookbooks/byocm-chef.png)](https://travis-ci.org/rgeyer-rs-cookbooks/byocm-chef)
+
 Requirements
 ------------
 
