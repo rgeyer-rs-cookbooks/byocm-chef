@@ -1,24 +1,15 @@
 byocm-chef Cookbook
 ===================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+A cookbook for enabling better interoperability with RightScale when doing Chef
+BYOCM
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - byocm-chef needs toaster to brown your bagel.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
-#### byocm-chef::default
+#### byocm-chef::serialize
 <table>
   <tr>
     <th>Key</th>
@@ -27,42 +18,34 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['byocm-chef']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['byocm-chef']['rs_sketchy']</tt></td>
+    <td>String</td>
+    <td>The Sketchy Hostname assigned by RightScale</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><tt>['byocm-chef']['rs_instance_uuid']</tt></td>
+    <td>String</td>
+    <td>The instance uuid assigned by RightScale</td>
+    <td></td>
   </tr>
 </table>
 
 Usage
 -----
-#### byocm-chef::default
-TODO: Write usage instructions for each cookbook.
+#### byocm-chef::serialize
 
-e.g.
-Just include `byocm-chef` in your node's `run_list`:
+Serialize is meant to be used on the RightScale ServerTemplate in the Boot
+runlist, before the chef::install_client recipe is run.  This ensures that the
+serialized JSON file is in place for byocm-chef::deserialize to fetch before
+any chef-client converges might happen.
 
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[byocm-chef]"
-  ]
-}
-```
+#### byocm-chef::deserialize
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+Meant to be run as the first thing in your roles runlist so that RightScale
+specific values are available to code run by chef-client against your own
+Chef server.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Ryan J. Geyer <me@ryangeyer.com>

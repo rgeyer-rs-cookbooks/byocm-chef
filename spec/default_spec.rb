@@ -17,8 +17,8 @@ describe 'byocm-chef::serialize' do
   it 'serializes stuff to a json file' do
     expect(chef_run).to create_template('/opt/byocm-chef/node.js').with(
         variables: {
-          rs_sketchy: 'sketchy.rightscale.com',
-          rs_instance_uuid: 'uuid'
+          'rs_sketchy' => 'sketchy.rightscale.com',
+          'rs_instance_uuid' => 'uuid'
         }
       )
   end

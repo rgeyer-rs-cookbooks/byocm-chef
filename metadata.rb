@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# rubocop:disable SingleSpaceBeforeFirstArg
+# rubocop:disable SingleSpaceBeforeFirstArg, HashSyntax
 name             'byocm-chef'
 maintainer       'Ryan J. Geyer'
 maintainer_email 'me@ryangeyer.com'
