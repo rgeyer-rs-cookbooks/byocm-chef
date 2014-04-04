@@ -17,5 +17,6 @@ if ::File.exist?('/opt/byocm-chef/node.js')
     vars = JSON.load(f)
     node.override['rs-base']['collectd_server'] = vars['rs_sketchy']
     node.override['collectd']['fqdn'] = vars['rs_instance_uuid']
+    node.override['rightscale']['instance_uuid'] = vars['rs_instance_uuid']
   end
 end
