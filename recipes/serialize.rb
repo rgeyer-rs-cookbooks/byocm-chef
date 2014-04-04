@@ -17,7 +17,7 @@ directory '/opt/byocm-chef'
 template '/opt/byocm-chef/node.js' do
   source 'node.js.erb'
   variables(
-    rs_sketchy: node['byocm-chef']['rs_sketchy'],
-    rs_instance_uuid: node['byocm-chef']['rs_instance_uuid']
+    'rs_sketchy' => node['byocm-chef']['rs_sketchy'],
+    'rs_instance_uuid' => node['byocm-chef']['rs_instance_uuid']
   )
 end
